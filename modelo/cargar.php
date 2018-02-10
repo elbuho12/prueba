@@ -10,7 +10,7 @@ function cargar()
 		echo "<h2>Agregar registros</h2>";
 	}else{
 
-		foreach ($filas as $fila) {
+		foreach ($filas['f'] as $fila) {
 			echo "<script>";
 			echo "$(document).ready(function() {";
 			echo "$('#actualiza".$fila['id']." a').click(function(){";
@@ -25,7 +25,7 @@ function cargar()
 		}
 
 	echo "<table style='text-align:center; margin: 0 auto;'>";
-	foreach ($filas as $fila) {
+	foreach ($filas['f'] as $fila) {
 	echo "<tr><td>ID: ".$fila['id'] ."</td>
 	<td>TITULO: ".$fila['titulo']."</td></tr>
 	<tr><td>FECHA: ".$fila['fecha']."</td>
@@ -34,7 +34,9 @@ function cargar()
 
 	}	
 	echo "</table>";
-	
+	for ($i=1; $i<=$filas['t'] ; $i++) { 
+	echo "<a href='?pagina=".$i."'>".$i."</a> ";
+}
 }
 
 	
